@@ -11,16 +11,16 @@ let mongoURI =
 // }
 
 const insertToDb = async function (data) {
-  console.log('data in inserted to db::', data);
+  // console.log('data in inserted to db::', data);
   const client = new MongoClient(mongoURI);
-  console.log('New client created!');
+  // console.log('New client created!');
   await client.connect();
-  console.log('New connection');
+  // console.log('New connection');
   const db = client.db('bank-details');
   const collection = db.collection('Loan-approval');
-  console.log('collection:');
+  // console.log('collection:');
   let inserted = collection.insertOne(data);
-  console.log('inserted:', inserted);
+  // console.log('inserted:', inserted);
   return inserted;
 };
 

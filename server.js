@@ -1,7 +1,6 @@
 const express = require('express');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-// import path from 'path';
 const path = require('path');
 const app = express();
 // const __dirname = path.resolve();
@@ -21,7 +20,7 @@ const port = 8888;
 const { insertToDb } = require('./dbOperations');
 
 app.get('/', (req, res) => {
-  console.log('first route::');
+  // console.log('first route::');
   res.send('first page:::');
 });
 app.post('/insertDataToDb', jsonParser, async function (req, res) {
@@ -29,9 +28,9 @@ app.post('/insertDataToDb', jsonParser, async function (req, res) {
     console.log('req in post::', req.body);
     // console.log('res in post::', res);
     let data = req.body;
-    console.log('Data in post::', data);
+    // console.log('Data in post::', data);
     let insertedData = await insertToDb(data);
-    console.log('inserted data:', insertedData);
+    // console.log('inserted data:', insertedData);
     res.send({
       message: 'Done',
       data: insertedData,
