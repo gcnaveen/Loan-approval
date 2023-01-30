@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.checkout-steps > div {
+  width: 220px;
+  text-align: center;
+  /* border-top-width: 40px; */
+  border-top: 0.3rem solid #a0a0a0;
+  color: black;
+}
+.checkout-steps > div.active {
+  /* right: 0;
+  border-left: 2em solid  #00f05c; */
+
+  border-top: 0.3rem solid #00f05c;
+  color: black;
+}
