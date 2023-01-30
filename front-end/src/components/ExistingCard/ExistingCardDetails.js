@@ -18,13 +18,15 @@ export default function ExistingCardDetails() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const _data = { ...location.state, data };
-
+    let _data = { ...location.state, data };
+    console.log(
+      _data.LoanDetails.ProfessionalInfo.LoanInfo.PersanalInformation.email
+    );
     const config = {
       SecureToken: '91f6e886-7d0d-49b3-a062-0920c480a5e5',
       To: 'sample.test@yopmail.com',
-      From: 'naveengc99@gmail.com',
-      Subject: 'This is the data from naveen',
+      From: `${_data.LoanDetails.ProfessionalInfo.LoanInfo.PersanalInformation.email}`,
+      Subject: `This is the data from ${_data.LoanDetails.ProfessionalInfo.LoanInfo.PersanalInformation.firstName}`,
       Body: { _data },
     };
     console.log('data in front end', data);
