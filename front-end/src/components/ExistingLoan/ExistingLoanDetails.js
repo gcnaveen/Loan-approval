@@ -33,7 +33,7 @@ export default function ExistingLoanDetails() {
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
         <Form.Field>
           <label>No</label>
-          <input type="radio" value="No" {...register('value')} />
+          <input type="radio" value="No" {...register('Existing Loan')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
 

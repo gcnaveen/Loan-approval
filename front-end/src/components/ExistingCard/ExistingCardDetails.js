@@ -73,7 +73,7 @@ export default function ExistingCardDetails() {
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
         <Form.Field>
           <label>No</label>
-          <input type="radio" value="No" {...register('value')} />
+          <input type="radio" value="No" {...register('Credit Card')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
 
