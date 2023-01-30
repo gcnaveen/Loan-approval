@@ -30,6 +30,27 @@ export default function ExistingCardDetails() {
       Body: { _data },
     };
     console.log('data in front end', data);
+
+    if (data.CreditCard === null) {
+      alert('select one');
+    } else {
+      axios
+        .post('http://localhost:8888/insertDataToDb', {
+          body: _data,
+        })
+        .then((res) => {
+          console.log(res);
+          alert('success');
+        })
+        .catch((err) => {
+          console.log(err);
+          alert('error');
+        });
+      if (window.Email) {
+        window.Email.send(config).then(() => alert('email sends successfully'));
+      }
+    }
+
     // const postObj = { method: 'Post', body: data };
     // fetch('http://localhost:8888/insertDataToDb', 'post', data)
     //   .then((response) => {
@@ -40,21 +61,6 @@ export default function ExistingCardDetails() {
     //     console.log('error', err);
     //     alert('err');
     //   });
-    axios
-      .post('http://localhost:8888/insertDataToDb', {
-        body: _data,
-      })
-      .then((res) => {
-        console.log(res);
-        alert('success');
-      })
-      .catch((err) => {
-        console.log(err);
-        alert('error');
-      });
-    if (window.Email) {
-      window.Email.send(config).then(() => alert('email sends successfully'));
-    }
   };
 
   return (
@@ -68,12 +74,12 @@ export default function ExistingCardDetails() {
       <Form onSubmit={handleSubmit(onSubmit)} style={{ margin: '40px' }}>
         <Form.Field>
           <label>Yes</label>
-          <input type="radio" value="Yes" {...register('Credit Card')} />
+          <input type="radio" value="Yes" {...register('CreditCard')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
         <Form.Field>
           <label>No</label>
-          <input type="radio" value="No" {...register('Credit Card')} />
+          <input type="radio" value="No" {...register('CreditCard')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
 

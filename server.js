@@ -1,10 +1,10 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 const cors = require('cors');
-import path from 'path';
-
+// import path from 'path';
+const path = require('path');
 const app = express();
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 app.use(
   cors({

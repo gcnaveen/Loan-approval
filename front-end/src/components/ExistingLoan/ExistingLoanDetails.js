@@ -14,10 +14,14 @@ export default function ExistingLoanDetails() {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
+    console.log('data', data);
     const _data = { ...location.state, data };
+    if (data.ExistingLoan === null) {
+      alert('select one');
+    } else {
+      navigate('/exist-card', { state: { LoanDetails: _data } });
+    }
     console.log(_data);
-    navigate('/exist-card', { state: { LoanDetails: _data } });
   };
   return (
     <div>
@@ -28,12 +32,12 @@ export default function ExistingLoanDetails() {
       <Form onSubmit={handleSubmit(onSubmit)} style={{ margin: '40px' }}>
         <Form.Field>
           <label>Yes</label>
-          <input type="radio" value="Yes" {...register('Existing Loan')} />
+          <input type="radio" value="Yes" {...register('ExistingLoan')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
         <Form.Field>
           <label>No</label>
-          <input type="radio" value="No" {...register('Existing Loan')} />
+          <input type="radio" value="No" {...register('ExistingLoan')} />
         </Form.Field>
         {errors.value && <p style={{ color: 'red' }}>Please check the value</p>}
 
