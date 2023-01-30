@@ -40,15 +40,17 @@ export default function ExistingCardDetails() {
         })
         .then((res) => {
           console.log(res);
-          alert('success');
+          // alert('success');
+          if (window.Email) {
+            window.Email.send(config).then(() =>
+              alert('email sends successfully')
+            );
+          }
         })
         .catch((err) => {
           console.log(err);
           alert('error');
         });
-      if (window.Email) {
-        window.Email.send(config).then(() => alert('email sends successfully'));
-      }
     }
 
     // const postObj = { method: 'Post', body: data };
