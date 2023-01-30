@@ -1,8 +1,10 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 const cors = require('cors');
+import path from 'path';
 
 const app = express();
+const __dirname = path.resolve();
 
 app.use(
   cors({
@@ -42,7 +44,9 @@ app.post('/insertDataToDb', jsonParser, async function (req, res) {
     });
   }
 });
-
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './frontend/build/index.html'));
+});
 app.listen(port, () => {
   console.log('listening to port 8888');
 });
