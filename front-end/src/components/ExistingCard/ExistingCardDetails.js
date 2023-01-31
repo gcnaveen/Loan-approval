@@ -35,7 +35,7 @@ export default function ExistingCardDetails() {
       alert('select one');
     } else {
       axios
-        .post('http://localhost:8888/insertDataToDb', {
+        .post('/insertDataToDb', {
           body: _data,
         })
         .then((res) => {
