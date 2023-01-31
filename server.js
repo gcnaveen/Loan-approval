@@ -19,10 +19,10 @@ var jsonParser = bodyParser.json();
 const port = 8888;
 const { insertToDb } = require('./dbOperations');
 
-// app.get('/', (req, res) => {
-//   // console.log('first route::');
-//   res.send('first page:::');
-// });
+app.get('/', (req, res) => {
+  // console.log('first route::');
+  res.send('first page:::');
+});
 app.post('/insertDataToDb', jsonParser, async function (req, res) {
   try {
     console.log('req in post::', req.body);
