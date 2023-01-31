@@ -44,7 +44,7 @@ app.post('/insertDataToDb', jsonParser, async function (req, res) {
   }
 });
 
-app.get('*', function (req, res) {
+app.get('*', function (_req, res) {
   res.sendFile(path.join(__dirname, './frontend/build/index.html'));
 });
 
