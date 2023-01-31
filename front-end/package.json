@@ -1,6 +1,6 @@
 {
   "name": "loan-approval-screen",
-  "proxy": "http://localhost:8888",
+  "proxy": "https://loan-approval.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
