@@ -1,8 +1,7 @@
 const { MongoClient } = require('mongodb');
 // import MongoClient from 'mongodb';
-let mongoURI =
-  'mongodb+srv://amazona-mern:Naveen@cluster0.hxyvdlz.mongodb.net/bank-details?retryWrites=true&w=majority';
-
+// let mongoURI =
+// process.env.MONGODB_URI
 // async function listDatabases(client) {
 //   let databasesList = await client.db().admin().listCollections();
 
@@ -12,7 +11,7 @@ let mongoURI =
 
 const insertToDb = async function (data) {
   // console.log('data in inserted to db::', data);
-  const client = new MongoClient(mongoURI);
+  const client = new MongoClient(process.env.MONGODB_URI);
   // console.log('New client created!');
   await client.connect();
   // console.log('New connection');
