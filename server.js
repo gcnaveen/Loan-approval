@@ -44,9 +44,9 @@ app.post('/insertDataToDb', jsonParser, async function (req, res) {
   }
 });
 
-// app.get('*', function (req, res) {
-//   res.sendFile(path.join(__dirname, './frontend/build/index.html'));
-// });
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './frontend/build/index.html'));
+});
 
 app.listen(port, () => {
   console.log('listening to port 8888');
